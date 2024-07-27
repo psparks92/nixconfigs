@@ -1,0 +1,54 @@
+# Alacritty Configuration in TOML format
+
+# Window configuration
+[window]
+dimensions = { columns = 120, lines = 30 }
+padding = { x = 5, y = 5 }
+
+[env]
+TERM = "xterm-256color"
+
+# Font configuration
+[font]
+normal = { family = "Menlo", style = "Regular" }
+size = 12.0
+
+# Colors (Gruvbox dark)
+[colors.primary]
+background = "#282828"
+foreground = "#ebdbb2"
+
+[colors.normal]
+black = "#282828"
+red = "#cc241d"
+green = "#98971a"
+yellow = "#d79921"
+blue = "#458588"
+magenta = "#b16286"
+cyan = "#689d6a"
+white = "#a89984"
+
+# Cursor style
+[cursor]
+style = "Block"
+
+# Shell
+[shell]
+program = "/opt/homebrew/bin/tmux"
+args = ["new-session", "-A", "-D", "-s", "main"]
+
+# Key bindings
+[[keyboard.bindings]]
+key = "N"
+mods = "Command"
+action = "SpawnNewInstance"
+
+[[keyboard.bindings]]
+key = "V"
+mods = "Command"
+action = "Paste"
+
+[[keyboard.bindings]]
+key = "C"
+mods = "Command"
+action = "Copy"
